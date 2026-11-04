@@ -65,7 +65,9 @@ Proposta de ferramenta para o orquestrador, a confirmar:
 - **IA chamada pelo aplicativo** (Claude, via API) nos passos que pedem interpretação: diagnóstico, cenários de preço e Ads, textos. A resposta volta em formato fixo e é gravada.
 - **Depois, avaliar Claude Managed Agents.** É um serviço da Anthropic que roda os agentes, com agendamento, equipe de agentes e ponto de aprovação humana antes de cada ação. Faz sentido quando os agentes passarem a executar ações nas contas ou rodar tarefas longas sozinhos.
 
-**R12 — EM ESCLARECIMENTO.** A explicação foi reformulada para o Jean.
+**R12 — DECIDIDO.** O que tem resposta única vira função programada do sistema, sem IA: importação, duplicidade, totais, custo ausente e separação entre clientes. As responsabilidades continuam as mesmas; muda só quem executa. A IA fica onde há julgamento: diagnóstico, explicação de desvios, recomendações e textos.
+
+**Próximo passo:** detalhar os agentes um a um (habilidades, processos, entradas, saídas, aprovações), começando por Precificação e Rentabilidade.
 
 **R15 — DECIDIDO.** Os dados pessoais dos compradores não são guardados. Importar só os campos usados nos cálculos.
 
