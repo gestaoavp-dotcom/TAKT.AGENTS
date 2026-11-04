@@ -33,6 +33,28 @@ O documento está bem construído. As contas conferem (R17), as regras de bloque
 | R17 | 6.4, 6.5, 6.7 | Observação | Contas conferidas e um alerta sobre ROAS |
 | R18 | 20.2 | Observação | Casos de teste que faltam |
 
+## Registro de decisões do Jean
+
+### 4 de novembro de 2026
+
+**R01 — DECIDIDO.** A meta de 15% vale para a margem consolidada do cliente no mês. Cada produto também deve mirar 15% no preço. Trabalhar abaixo disso com um produto é permitido com estratégia justificada e registrada como exceção (2.2, 6.7).
+
+**R02 — DECIDIDO.** O frete cobrado do comprador não entra na receita. Ele é abatido do custo de logística, e só a diferença (subsídio ou prejuízo de frete) afeta a margem. Cuidado de implementação: alguns relatórios dos canais trazem o frete dentro do "valor total" do pedido, então a importação precisa separar.
+
+**R03 — DECIDIDO EM PARTE.**
+- **Armazenagem do Full:** entra no resultado do mês em que for cobrada. Vai para o SKU quando o relatório do canal trouxer a cobrança por produto; caso contrário, fica como "armazenagem não atribuída" do canal, como já acontece com o Ads sem atribuição (6.9).
+- **Envio de mercadoria ao Full:** coleta ou veículo próprio. O custo do envio é diluído no custo das unidades daquele envio.
+- **Mensalidades:** continuam fora da margem como despesa fixa. Exemplos: plano profissional da Amazon, ERP (UpSeller, Bling) e ferramentas.
+- **Pendente:** (a) como valorar a viagem com veículo próprio; (b) se a diluição é por unidade ou por volume; (c) se a armazenagem entra como estimativa no preço ou só no resultado realizado.
+
+**R04 — DECIDIDO.** A comissão de afiliados e criadores é investimento em anúncios. Ela entra junto com o Ads no limite de investimento, mostrada como linha separada.
+
+**R05 — DECIDIDO.** A maioria dos clientes é do Simples Nacional, então a primeira versão usa uma alíquota efetiva por cliente. Clientes de outros regimes ficam com a margem bloqueada até existir regra aprovada.
+- **Atenção:** no Simples, a alíquota efetiva muda ao longo do ano, conforme o faturamento dos últimos 12 meses. O cadastro precisa guardar a alíquota por mês.
+- **Pendente:** quem informa a alíquota de cada mês.
+
+**R06 — EM ESCLARECIMENTO.** A pergunta foi reformulada com exemplos para o Jean.
+
 ## Achados impeditivos
 
 ### R01 — A meta de 15% vale por produto ou na média do cliente?
