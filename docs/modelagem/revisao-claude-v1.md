@@ -41,11 +41,14 @@ O documento está bem construído. As contas conferem (R17), as regras de bloque
 
 **R02 — DECIDIDO.** O frete cobrado do comprador não entra na receita. Ele é abatido do custo de logística, e só a diferença (subsídio ou prejuízo de frete) afeta a margem. Cuidado de implementação: alguns relatórios dos canais trazem o frete dentro do "valor total" do pedido, então a importação precisa separar.
 
-**R03 — DECIDIDO EM PARTE.**
+**R03 — DECIDIDO.**
 - **Armazenagem do Full:** entra no resultado do mês em que for cobrada. Vai para o SKU quando o relatório do canal trouxer a cobrança por produto; caso contrário, fica como "armazenagem não atribuída" do canal, como já acontece com o Ads sem atribuição (6.9).
 - **Envio de mercadoria ao Full:** coleta ou veículo próprio. O custo do envio é diluído no custo das unidades daquele envio.
 - **Mensalidades:** continuam fora da margem como despesa fixa. Exemplos: plano profissional da Amazon, ERP (UpSeller, Bling) e ferramentas.
-- **Pendente:** (a) como valorar a viagem com veículo próprio; (b) se a diluição é por unidade ou por volume; (c) se a armazenagem entra como estimativa no preço ou só no resultado realizado.
+- **Veículo próprio:** o valor da viagem é informado a cada envio, porque depende do motorista e costuma ser acertado na hora. Sem valor informado, o envio fica com custo pendente; o sistema não deixa zerado sem aviso.
+- **Diluição do envio:** por unidade. Separar por tamanho do produto não é atribuição da gestão.
+- **Armazenagem:** entra só no resultado do mês em que for cobrada, sem estimativa no preço. Ela é acompanhada pelas métricas de desempenho dos envios e não aparece de surpresa.
+- **Mensalidades:** confirmado que ficam fora como despesa fixa.
 
 **R04 — DECIDIDO.** A comissão de afiliados e criadores é investimento em anúncios. Ela entra junto com o Ads no limite de investimento, mostrada como linha separada.
 
@@ -54,6 +57,17 @@ O documento está bem construído. As contas conferem (R17), as regras de bloque
 - **Pendente:** quem informa a alíquota de cada mês.
 
 **R06 — EM ESCLARECIMENTO.** A pergunta foi reformulada com exemplos para o Jean.
+
+**R11 — DECIDIDO.** A Conta cuida do que fazer e por quê. O Coordenador é um **orquestrador**: cuida de quem faz, quando e em que pé está.
+
+Proposta de ferramenta para o orquestrador, a confirmar:
+- **Controle no aplicativo TAKT Agents.** Fila de tarefas, aprovações, prazos, agenda diária, semanal e mensal, e histórico ficam no aplicativo e no banco, como regra fixa. Uma aprovação pode esperar dias e precisa ficar registrada (4.3) e ser invalidada se o custo mudar (4.4). Isso não deve depender da memória de uma IA.
+- **IA chamada pelo aplicativo** (Claude, via API) nos passos que pedem interpretação: diagnóstico, cenários de preço e Ads, textos. A resposta volta em formato fixo e é gravada.
+- **Depois, avaliar Claude Managed Agents.** É um serviço da Anthropic que roda os agentes, com agendamento, equipe de agentes e ponto de aprovação humana antes de cada ação. Faz sentido quando os agentes passarem a executar ações nas contas ou rodar tarefas longas sozinhos.
+
+**R12 — EM ESCLARECIMENTO.** A explicação foi reformulada para o Jean.
+
+**R15 — DECIDIDO.** Os dados pessoais dos compradores não são guardados. Importar só os campos usados nos cálculos.
 
 ## Achados impeditivos
 
