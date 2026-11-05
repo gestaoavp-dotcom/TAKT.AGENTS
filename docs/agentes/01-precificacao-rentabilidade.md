@@ -4,6 +4,32 @@ Ficha de detalhamento, versão 0.1 de 4 de novembro de 2026, em revisão com o J
 
 **Legenda:** **DECIDIDO** quando o Jean já confirmou; **PROPOSTO** quando é sugestão para revisar; **PENDENTE** quando falta uma resposta (lista na seção 12).
 
+## 0. Folha de aprovação do Jean
+
+Responder cada item com **sim**, **não** ou **ajustar**. O resto da ficha (passos, testes, conferências) é revisado pelo Claude e pelo agente de Revisão; o Jean não precisa ler para aprovar.
+
+| # | Afirmação | Resposta |
+| --- | --- | --- |
+| 1 | Na primeira versão o agente só recomenda preço. Depois, só aplica com o seu sim. | |
+| 2 | No Mercado Livre, Clássico e Premium são calculados como preços separados. | |
+| 3 | A conta oficial da seção 4 está na ordem certa e não falta nenhuma linha. | |
+| 4 | A embalagem conta como custo da venda, por pedido. | |
+| 5 | O sistema usa o custo da planilha válido na data da venda. Se esse valor é o último custo ou a média, quem decide é você, ao preencher. | |
+| 6 | Frete da compra e impostos de importação entram no custo do produto, quando conhecidos. | |
+| 7 | Produto vendido sem custo fica com preço e margem bloqueados, sem estimativa, até o custo chegar. | |
+| 8 | O limite oficial de marketing é o investimento total ÷ a receita total do mês. O ROAS do painel serve só como referência. | |
+| 9 | Faixas abaixo de 15%: atenção entre 12% e 13%, piso de 10%, e abaixo de 10% só com decisão específica sua. | |
+| 10 | Uma exceção de margem vence no prazo e nunca se renova sozinha. | |
+| 11 | O mês da venda usa a mesma data do fechamento de outubro. | |
+| 12 | Mês validado não muda. Ajustes tardios entram no mês em que acontecem, marcados com o mês de origem. | |
+| 13 | Na conferência com outubro, aceitar até 1% de diferença na receita, com toda diferença explicada. | |
+| 14 | Na primeira versão, os preços da concorrência são informados por você. | |
+
+Perguntas abertas, sem resposta sim/não:
+
+- **A.** Como os custos chegam hoje? Se houver uma planilha de exemplo, informar onde está.
+- **B.** Quem informa a alíquota do Simples de cada mês, e até que dia?
+
 ## 1. Missão
 
 Garantir que cada cliente trabalhe com preços que entreguem a meta de margem, e mostrar todo mês se a meta foi entregue e por quê.
