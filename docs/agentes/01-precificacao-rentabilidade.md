@@ -12,10 +12,10 @@ Responder cada item com **sim**, **não** ou **ajustar**. O resto da ficha (pass
 | --- | --- | --- |
 | 1 | Na primeira versão o agente só recomenda preço. Depois, só aplica com o seu sim. | |
 | 2 | No Mercado Livre, Clássico e Premium são calculados como preços separados. | |
-| 3 | A conta oficial da seção 4 está na ordem certa e não falta nenhuma linha. | **Ajustar (5/11):** entram os materiais de envio e o brinde. Antecipação de recebimento fica fora. O parcelamento sem juros não ganha linha própria. |
-| 4 | A embalagem conta como custo da venda, por pedido. | **Sim (5/11):** por pedido. Em geral é saco, ou o produto já vem na própria caixa. Quando for caixa, a equipe informa. |
+| 3 | A conta oficial da seção 4 está na ordem certa e não falta nenhuma linha. | **Ajustar (6/11):** entram os materiais de envio e o brinde. Antecipação de recebimento fica fora. O parcelamento sem juros não ganha linha própria. |
+| 4 | A embalagem conta como custo da venda, por pedido. | **Sim (6/11):** por pedido. Em geral é saco, ou o produto já vem na própria caixa. Quando for caixa, a equipe informa. |
 | 5 | O sistema usa o custo da planilha válido na data da venda. Se esse valor é o último custo ou a média, quem decide é você, ao preencher. | |
-| 6 | Frete da compra e impostos de importação entram no custo do produto, quando conhecidos. | **Sim, já incluídos (5/11):** o custo informado já vem com eles. O sistema não soma de novo, mas destaca a composição quando ela for informada. |
+| 6 | Frete da compra e impostos de importação entram no custo do produto, quando conhecidos. | **Sim, já incluídos (6/11):** o custo informado já vem com eles. O sistema não soma de novo, mas destaca a composição quando ela for informada. |
 | 7 | Produto vendido sem custo fica com preço e margem bloqueados, sem estimativa, até o custo chegar. | |
 | 8 | O limite oficial de marketing é o investimento total ÷ a receita total do mês. O ROAS do painel serve só como referência. | |
 | 9 | Faixas abaixo de 15%: atenção entre 12% e 13%, piso de 10%, e abaixo de 10% só com decisão específica sua. | |
