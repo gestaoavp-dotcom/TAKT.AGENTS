@@ -12,10 +12,10 @@ Responder cada item com **sim**, **não** ou **ajustar**. O resto da ficha (pass
 | --- | --- | --- |
 | 1 | Na primeira versão o agente só recomenda preço. Depois, só aplica com o seu sim. | |
 | 2 | No Mercado Livre, Clássico e Premium são calculados como preços separados. | |
-| 3 | A conta oficial da seção 4 está na ordem certa e não falta nenhuma linha. | |
-| 4 | A embalagem conta como custo da venda, por pedido. | |
+| 3 | A conta oficial da seção 4 está na ordem certa e não falta nenhuma linha. | **Ajustar (5/11):** entram os materiais de envio e o brinde. Antecipação de recebimento fica fora. O parcelamento sem juros não ganha linha própria. |
+| 4 | A embalagem conta como custo da venda, por pedido. | **Sim (5/11):** por pedido. Em geral é saco, ou o produto já vem na própria caixa. Quando for caixa, a equipe informa. |
 | 5 | O sistema usa o custo da planilha válido na data da venda. Se esse valor é o último custo ou a média, quem decide é você, ao preencher. | |
-| 6 | Frete da compra e impostos de importação entram no custo do produto, quando conhecidos. | |
+| 6 | Frete da compra e impostos de importação entram no custo do produto, quando conhecidos. | **Sim, já incluídos (5/11):** o custo informado já vem com eles. O sistema não soma de novo, mas destaca a composição quando ela for informada. |
 | 7 | Produto vendido sem custo fica com preço e margem bloqueados, sem estimativa, até o custo chegar. | |
 | 8 | O limite oficial de marketing é o investimento total ÷ a receita total do mês. O ROAS do painel serve só como referência. | |
 | 9 | Faixas abaixo de 15%: atenção entre 12% e 13%, piso de 10%, e abaixo de 10% só com decisão específica sua. | |
@@ -45,7 +45,7 @@ Na prática, o agente faz cinco coisas:
 ## 2. O que ele não faz
 
 - Não faz o fechamento contábil ou financeiro completo do cliente.
-- Não inclui despesas fixas, mensalidades nem a remuneração da gestão.
+- Não inclui despesas fixas, mensalidades, antecipação de recebimento nem a remuneração da gestão.
 - Não altera preço em nenhuma conta sem sua aprovação. Na primeira versão, nem com aprovação: só recomenda.
 - Não inventa custo. Custo que falta bloqueia o cálculo que depende dele e vira um pedido.
 - Não decide verba de Ads. Ele calcula o limite; quem planeja a verba é o agente de Ads.
@@ -63,6 +63,11 @@ Na prática, o agente faz cinco coisas:
 | A armazenagem do Full entra no resultado do mês em que for cobrada, sem estimativa no preço. | DECIDIDO (R03) |
 | O envio de mercadoria ao Full é diluído por unidade enviada. O valor da viagem com veículo próprio é informado a cada envio. | DECIDIDO (R03) |
 | Mensalidades (loja, ERP, ferramentas) ficam fora, como despesa fixa. | DECIDIDO (R03) |
+| Antecipação de recebimento fica fora da margem. | DECIDIDO (A1) |
+| O parcelamento sem juros não ganha linha própria. No Mercado Livre ele faz parte da tarifa do Premium; nos outros canais já vem incluído na tarifa. | DECIDIDO (A1) |
+| Materiais de envio (etiqueta, fita, saco) entram como custo por pedido, com valor padrão por cliente. Outros materiais são informados quando houver. | DECIDIDO (A1) |
+| O brinde entra quando houver, com o valor informado. | DECIDIDO (A1), a confirmar |
+| O custo do produto informado já inclui frete da compra e impostos de importação. O sistema não soma de novo. | DECIDIDO (A1) |
 | O imposto usa a alíquota efetiva do Simples, por cliente e por mês. Clientes de outros regimes ficam com a margem bloqueada até existir uma regra aprovada. | DECIDIDO (R05) |
 | Abaixo de 10%, nunca aplicar automaticamente; vira uma decisão específica sua. | PROPOSTO (2.2) |
 
@@ -77,7 +82,7 @@ Esta é a conta que o sistema faz sempre do mesmo jeito. É função programada,
 | − Tarifas do canal | Comissão e tarifas por venda, conforme o tipo de anúncio e a faixa de preço. |
 | − Imposto | Receita × alíquota efetiva do mês. |
 | − Frete líquido | Frete pago pelo vendedor menos o frete pago pelo comprador. |
-| − Outros custos da venda | Embalagem e o que mais for cadastrado como custo por venda. |
+| − Outros custos da venda | Por pedido: embalagem (saco, ou caixa quando informada), materiais de envio (etiqueta e fita, cerca de R$ 0,05 a R$ 0,10; saco, cerca de R$ 0,20 a R$ 0,30) e brinde, quando houver. Valores padrão por cliente; outros materiais quando informados. |
 | **= Contribuição antes do marketing** | |
 | − Marketing | Ads mais a comissão de afiliados e criadores. |
 | **= Contribuição depois do marketing** | |
@@ -130,7 +135,8 @@ Neste produto, o marketing pode chegar a R$ 30 por venda sem dar prejuízo, e a 
   2. Ligar cada produto da planilha ao produto vendido nos canais, sinalizando os que não casam.
   3. Para cada venda, achar o custo vigente na data da venda.
   4. Somar o envio ao Full por unidade nas vendas que saíram do Full.
-  5. Listar o que faltou: produto vendido sem custo, custo sem data, custo zerado sem confirmação.
+  5. Quando a planilha trouxer a composição do custo (valor do fornecedor, frete da compra, impostos de importação), guardar as partes e destacar quando uma delas mudar. O custo usado continua sendo o total informado.
+  6. Listar o que faltou: produto vendido sem custo, custo sem data, custo zerado sem confirmação.
 - **Entrega:** custo vigente por produto e por data, mais uma lista de pendências com quem deve resolver.
 - **Para quando:** custo zerado sem confirmação, custo com data no futuro usado numa venda passada, ou produto que não casa. Não usa custo antigo para um produto novo.
 - **Está certo quando:** todo produto vendido no período tem custo rastreável ou aparece na lista de pendências.
@@ -327,10 +333,13 @@ Neste produto, o marketing pode chegar a R$ 30 por venda sem dar prejuízo, e a 
 | --- | --- | --- |
 | PP01 | Como os custos chegam hoje (planilha, colunas)? | Uma planilha por cliente com produto, custo e data de início |
 | PP02 | Quando o produto é recomprado por outro preço, qual custo vale? | O sistema usa o valor da planilha válido na data da venda; você decide se esse valor é o último custo ou a média |
-| PP03 | O custo do produto inclui frete da compra, impostos de importação e embalagem? | Incluir frete da compra e impostos de importação quando conhecidos; embalagem em linha separada |
+| PP03 | ~~O custo do produto inclui frete da compra, impostos de importação e embalagem?~~ | **Resolvido (A1):** o custo já vem com frete e impostos; a embalagem vai em linha própria, por pedido |
 | PP04 | Qual data define o mês da venda, e como ajustar mês já validado? | A mesma data usada no fechamento de outubro; ajustes tardios no mês em que acontecem |
 | PP05 | Quem informa a alíquota do Simples de cada mês? | Você ou o contador do cliente, até o dia X do mês seguinte |
 | PP06 | A faixa abaixo de 15% está certa (atenção em 12% a 13%, piso de 10%, abaixo disso decisão específica)? | Confirmar |
 | PP07 | Quais ferramentas de pesquisa de concorrência você usa? | Na primeira versão, você informa ou anexa |
 | PP08 | Quanto de diferença é aceitável ao conferir com outubro? | Até 1% da receita, com toda diferença explicada |
-| PP09 | A embalagem é custo por pedido ou por unidade? | Por pedido |
+| PP09 | ~~A embalagem é custo por pedido ou por unidade?~~ | **Resolvido (A1):** por pedido |
+| PP10 | Valor padrão dos materiais de envio por pedido | R$ 0,10 (etiqueta e fita) + R$ 0,25 (saco) = R$ 0,35 por pedido, ajustável por cliente |
+| PP11 | Venda que sai do Full: quem embala é a plataforma, mas a etiqueta e o saco de cada unidade são colocados antes do envio ao Full | Contar etiqueta e saco por unidade, junto com o envio ao Full, e não por pedido |
+| PP12 | Pedido com produtos de embalagens diferentes | Usar a embalagem de maior custo entre os produtos do pedido |

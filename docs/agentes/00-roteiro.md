@@ -14,8 +14,8 @@ O Claude conduz; o Jean aprova. Cada passo é pequeno: ler ou ver uma coisa e re
 
 | Passo | Assunto | Itens da folha | Situação |
 | --- | --- | --- | --- |
-| A1 | A conta oficial: linhas e o que entra no custo | 3, 4, 6 | 🟨 |
-| A2 | Custos: de onde vêm e qual valor vale | 5, 7, pergunta A | ⬜ |
+| A1 | A conta oficial: linhas e o que entra no custo | 3, 4, 6 | ✅ 5/11 |
+| A2 | Custos e materiais de envio: de onde vêm, qual valor vale, Full | 5, 7, pergunta A, PP10 a PP12 | 🟨 |
 | A3 | Limites de marketing e faixas abaixo de 15% | 8, 9, 10 | ⬜ |
 | A4 | Fechamento do mês | 11, 12, 13, pergunta B | ⬜ |
 | A5 | Preço: recomendação, Clássico × Premium e concorrência | 1, 2, 14 | ⬜ |
